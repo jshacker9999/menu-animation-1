@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Menu Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+
+</head>
+
+<body>
+	<div id="app" style="padding: 50px;" v-cloak>
+
+		<div class="rotation3D-baseMap"></div>
+
+		<div id="rotation3D" class="rotation3D">
+			<button class="center">Center</button>
+			<div class="itemList">
+				<div class="rotation3D__item" :class="item.type" v-for="item in itemList">
+					<div class="scale">
+						<div class="baseImg"></div>
+						<div class="cont">
+							<i class="iconfont" :class="item.icon"></i>
+							<p>{{item.name}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="lineList">
+				<div class="rotation3D__line" v-for="item in itemList" :class="item.type">
+					<div v-if="item.type=='blue'" class="pos">
+						<svg width="10" height="400">
+							<path id="path1" d="M0 400, 0 0" stroke-dasharray="5,10" />
+						</svg>
+						<div class="dot dot1 el-icon-caret-right"></div>
+					</div>
+					<div v-if="item.type=='yellow'" class="pos">
+						<svg width="10" height="400">
+							<path id="path2" d="M0 400, 0 0" stroke-dasharray="5,10" />
+						</svg>
+						<div class="dot dot2"><i class="el-icon-close"></i></div>
+					</div>
+					<div v-if="item.type=='green'" class="pos" style="left: -16px;">
+						<svg width="50" height="400">
+							<path id="path3" d="M20 400 S 0 200, 20 0" stroke-dasharray="5,10" />
+							<path id="path4" d="M20 400 S 40 200, 20 0" stroke-dasharray="5,10" />
+						</svg>
+						<div class="dot dot3 el-icon-caret-right"></div>
+						<div class="dot dot4 el-icon-caret-right"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/vue2.6.10.min.js"></script>
+<script src="js/demo.js"></script>
+</html>
