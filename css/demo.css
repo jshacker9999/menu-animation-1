@@ -208,6 +208,6 @@ body {
   height: 318px;
   display: block;
   content: "";
-  background: url("js/rotation3D/img/baseLogo.png");
+  background: url("../images/baseLogo.png");
   animation: 10s bounceUpDown infinite;
 }
